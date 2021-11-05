@@ -6,7 +6,7 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 00:40:58 by yeju              #+#    #+#             */
-/*   Updated: 2021/11/05 23:24:30 by yeju             ###   ########.fr       */
+/*   Updated: 2021/11/06 01:42:06 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void				ft_putchar(char c);
 void				ft_putnbr(int n);
 
 void				server_sa_sigaction(int sig, siginfo_t *act, void *oact);
-struct sigaction	client_action(unsigned long int *len, char **argv);
+struct sigaction	client_action(char **argv);
 void				client_move_bit(int n);
 
 typedef struct s_signal
@@ -32,7 +32,5 @@ typedef struct s_signal
 	char			word;
 	int				pid;
 }					t_signal;
-
-t_signal			g_signal;
 
 #endif

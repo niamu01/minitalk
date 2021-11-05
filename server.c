@@ -6,11 +6,13 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 00:41:10 by yeju              #+#    #+#             */
-/*   Updated: 2021/11/05 23:19:11 by yeju             ###   ########.fr       */
+/*   Updated: 2021/11/06 00:51:57 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+t_signal			g_signal;
 
 void	server_sa_sigaction(int sig, siginfo_t *act, void *oact)
 {

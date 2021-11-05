@@ -6,11 +6,13 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 00:40:44 by yeju              #+#    #+#             */
-/*   Updated: 2021/11/05 23:19:11 by yeju             ###   ########.fr       */
+/*   Updated: 2021/11/06 00:51:48 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+t_signal			g_signal;
 
 void	client_move_bit(int n)
 {
@@ -18,11 +20,10 @@ void	client_move_bit(int n)
 	g_signal.word_bit >>= 1;
 }
 
-struct sigaction	client_action(unsigned long int *len, char **argv)
+struct sigaction	client_action(char **argv)
 {
 	struct sigaction	action;
 
-	*len = ft_strlen(argv[2]) + 1;
 	action.sa_flags = 0;
 	action.sa_handler = &client_move_bit;
 	sigemptyset(&action.sa_mask);
@@ -37,7 +38,8 @@ int	main(int argc, char **argv)
 
 	if (argc < 3)
 		return (-1);
-	action = client_action(&len, argv);
+	len = ft_strlen(argv[2]) + 1;
+	action = client_action(argv);
 	sigaction(SIGUSR1, &action, 0);
 	while (len--)
 	{
