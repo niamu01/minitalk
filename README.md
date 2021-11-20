@@ -142,7 +142,7 @@ SIGUSR2라는 시그널이 들어왔을 때 작동시킬 handler 하나
 
 &연산하면...
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8e379e42-7a0e-421b-853a-5e2e7ddc60fd/Untitled.png)
+![메모장](https://ifh.cc/g/682PXF.png)
 
 따라서 1000 0000 부터 1의 위치를 >>(오른쪽으로 이동) 하며 어떤 문자가 들어왔는지 스캔하는 것이다.
 
@@ -275,7 +275,7 @@ usleep()을 통해 글자 출력 사이에 시간을 준다.
 
 - [그리고 문서는 이쪽이 더 정확한것같다](https://www.qnx.com/developers/docs/6.5.0SP1.update/com.qnx.doc.neutrino_lib_ref/s/siginfo_t.html)🤔
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c5d8c66e-1387-4878-bcc0-ac862988185a/Untitled.png)
+    ![si_pid에대한_캡쳐본](https://ifh.cc/g/bKHozl.png)
     
 
 siginfo_t구조체의 si_pid는 client의 pid를 가져온다.
